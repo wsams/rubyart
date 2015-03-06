@@ -1,4 +1,5 @@
-# rubyart
+rubyart
+=======
 
 A port of my JsArt port of my PHPArt project. Given various mathematical expressions one can generate interesting PNG images.
 
@@ -12,3 +13,7 @@ You will need to install the following dependencies.
 Run `ruby render.rb` to generate `image.png`.
 
 Update the `r`, `g`, and `b` variables with math expressions to change the image produced.
+
+Example image
+-------------
+<a target="_blank" href="image.png"><img src="image.png" alt="sample rendered image" /></a>
