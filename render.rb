@@ -3,8 +3,8 @@ require 'rubygems'
 # gem install RubyInline
 require 'png'
 
-rows = 500
-cols = 500
+rows = 125
+cols = 250
 
 def make_int(i)
     i = Math.sqrt(i ** 2)
@@ -18,10 +18,10 @@ def make_int(i)
     return i
 end
 
-canvas = PNG::Canvas.new(rows, cols)
+canvas = PNG::Canvas.new(cols, rows)
 
-0.upto(rows - 1) do |x|
-    0.upto(cols - 1) do |y|
+0.upto(cols - 1) do |x|
+    0.upto(rows - 1) do |y|
         r = make_int(x);
         g = make_int(y + y);
         b = make_int(x);
