@@ -35,6 +35,6 @@ Run `ruby make_gif.rb` to generate `example.gif`. Temporary PNG files will be le
 
 To generate other interesting GIFs update the `gif_factor` passed to `render.rb` from `make_gif.rb`. Also update the mathematical expressions for `r`, `g`, and `b` inside `render.rb`.
 
-Example gif
------------
-<a target="_blank" href="example.gif"><img src="http://i.imgur.com/tZppxZ2.gif" alt="sample rendered gif" /></a>
+Example GIFs
+------------
+<a target="_blank" href="example.gif"><img src="http://i.imgur.com/tZppxZ2.gif" alt="sample rendered gif" /></a> <a target="_blank" href="example.gif"><img src="http://i.imgur.com/BUW3dXU.gif" alt="sample rendered gif" /></a>
