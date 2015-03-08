@@ -23,4 +23,6 @@ Example image
 
 Example GIFs
 ------------
-<a target="_blank" href="example.gif"><img src="http://i.imgur.com/tZppxZ2.gif" alt="sample rendered gif" /></a> <a target="_blank" href="example.gif"><img src="http://i.imgur.com/BUW3dXU.gif" alt="sample rendered gif" /></a>
+Due to the size of each GIF (~4-6mb) I created a gallery on imgur.
+
+<a target="_blank" href="http://imgur.com/a/h8Yot">http://imgur.com/a/h8Yot</a>
