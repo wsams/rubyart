@@ -3,6 +3,8 @@ require 'rubygems'
 # gem install RubyInline
 require 'png'
 
+gif_factor = ARGV[0].to_i
+img_out = ARGV[1]
 rows = 125
 cols = 250
 
@@ -22,12 +24,12 @@ canvas = PNG::Canvas.new(cols, rows)
 
 0.upto(cols - 1) do |x|
     0.upto(rows - 1) do |y|
-        r = make_int(x);
-        g = make_int(y + y);
-        b = make_int(x);
+        r = make_int(gif_factor + make_int(x));
+        g = make_int(gif_factor - make_int(y + y));
+        b = make_int(gif_factor - make_int(x));
         canvas[x, y] = PNG::Color.new(r, g, b)
     end
 end
 
 png = PNG.new(canvas)
-png.save 'image.png'
+png.save img_out
