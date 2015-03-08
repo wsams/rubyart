@@ -1,7 +1,7 @@
 rubyart
 =======
 
-A port of my JsArt port of my PHPArt project. Given various mathematical expressions one can generate interesting PNG images.
+Generate interesting PNG and animated GIFs using Ruby.
 
 See [http://www.rubydoc.info/gems/png/1.1.0/PNG/Canvas](http://www.rubydoc.info/gems/png/1.1.0/PNG/Canvas) for information on PNG.
 
