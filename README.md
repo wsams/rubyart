@@ -5,35 +5,21 @@ Generate interesting PNG and animated GIFs using Ruby.
 
 See [http://www.rubydoc.info/gems/png/1.1.0/PNG/Canvas](http://www.rubydoc.info/gems/png/1.1.0/PNG/Canvas) for information on PNG.
 
-You will need to install the following dependencies.
+You will need to install the following dependencies. On Ubuntu you can install `imagemagick` and `libmagickwand-dev` in order to install `rmagick`
 
     gem install png
     gem install RubyInline
+    gem install rmagick
 
-Run `ruby render.rb 0 image.png` to generate `image.png`. The 1st argument is a magic number for altering the generated image. The 2nd argument is the output file name.
+`render.rb` is a sample script that demonstrates usaged of `rubyart.rb`.
 
-Update the `r`, `g`, and `b` variables with math expressions to change the image produced.
+Currently to generate different images and GIFs you will need to modify the two methods in `rubyart.rb`: `render_img` and `render_gif`.
+
+For example modify usage of `gif_factor` and the values of `r`, `g`, and `b`. Provide various mathematical expressions.
 
 Example image
 -------------
 <a target="_blank" href="image.png"><img src="image.png" alt="sample rendered image" /></a>
-
-Animated GIFs
-=============
-
-To use `make_gifs.rb` to create animated gifs from generated PNGs you will need to install RMagick.
-
-On a Debian based machine you may need to install the following programs. See [http://stackoverflow.com/questions/3704919/installing-rmagick-on-ubuntu](http://stackoverflow.com/questions/3704919/installing-rmagick-on-ubuntu) for more information.
-
-    sudo apt-get install imagemagick libmagickwand-dev
-
-Then you can install `rmagick`.
-
-    gem install rmagick
-
-Run `ruby make_gif.rb` to generate `example.gif`. Temporary PNG files will be left in the directory `gifs/`.
-
-To generate other interesting GIFs update the `gif_factor` passed to `render.rb` from `make_gif.rb`. Also update the mathematical expressions for `r`, `g`, and `b` inside `render.rb`.
 
 Example GIFs
 ------------
