@@ -10,7 +10,7 @@ You will need to install the following dependencies.
     gem install png
     gem install RubyInline
 
-Run `ruby render.rb _test image.png` to generate `image_test.png`.
+Run `ruby render.rb _test image` to generate `image_test.png`. The 1st argument is a suffix to the 2nd argument. `.png` will be appended. The syntax makes more sense when used with the `make_gif.rb` script.
 
 Update the `r`, `g`, and `b` variables with math expressions to change the image produced.
 
