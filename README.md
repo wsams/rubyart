@@ -31,7 +31,9 @@ Then you can install `rmagick`.
 
     gem install rmagick
 
-Running `ruby make_gif.rb` will generated `example.gif`. Temporary PNG files will be left in the directory `gifs/`.
+Run `ruby make_gif.rb` to generate `example.gif`. Temporary PNG files will be left in the directory `gifs/`.
+
+To generate other interesting GIFs update the `gif_factor` passed to `render.rb` from `make_gif.rb`. Also update the mathematical expressions for `r`, `g`, and `b` inside `render.rb`.
 
 Example gif
 -----------
