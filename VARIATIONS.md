@@ -2,6 +2,24 @@ The following variations may be used in `RubyArt.render_img`
 
         0.upto(cols - 1) do |x|
             0.upto(rows - 1) do |y|
+                r = make_int(x * y)
+                g = make_int(x + r * gif_factor)
+                b = make_int(r * g + gif_factor)
+                canvas[x, y] = PNG::Color.new(r, g, b)
+            end
+        end
+
+        0.upto(cols - 1) do |x|
+            0.upto(rows - 1) do |y|
+                r = make_int(gif_factor - (x + y))
+                g = make_int(r - y ** 2)
+                b = make_int(r - gif_factor)
+                canvas[x, y] = PNG::Color.new(r, g, b)
+            end
+        end
+
+        0.upto(cols - 1) do |x|
+            0.upto(rows - 1) do |y|
                 r = make_int(gif_factor + (x + Random.rand(y + 1)))
                 g = make_int(y - Random.rand(y + 1))
                 b = make_int(gif_factor - (x / (y + 1)))
