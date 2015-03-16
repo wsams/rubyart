@@ -1,6 +1,6 @@
-require 'rubygems'
-require 'png'
-require 'RMagick'
+require "rubygems"
+require "png"
+require "RMagick"
 
 class RubyArt
 
@@ -11,9 +11,7 @@ class RubyArt
         def make_int(i)
             i = Math.sqrt(i ** 2)
 
-            if i > 0 && i < 1
-                i = i * 100
-            end
+            i = i * 100 if i > 0 && i < 1
 
             if i > 255
                 i % 256
@@ -38,24 +36,22 @@ class RubyArt
     end
 
     def render_gif(gif_name)
-        if !File.directory?("gifs")
-            Dir.mkdir("gifs")
-        end
+        Dir.mkdir("gifs") if !File.directory?("gifs")
 
         gif_list = Magick::ImageList.new
 
         0.upto(255) do |x|
             num = x.to_s
             if num.length == 1
-                num = "00" + num
+                num = "00#{num}"
             elsif num.length == 2
-                num = "0" + num
+                num = "0#{num}"
             end
-            render_img(x, "gifs/image" + num + ".png")
-            gif_list.read("gifs/image" + num + ".png")
+            render_img(x, "gifs/image#{num}.png")
+            gif_list.read("gifs/image#{num}.png")
         end
 
-        gif_list.write gif_name
+        gif_list.write(gif_name)
     end
 
 end
