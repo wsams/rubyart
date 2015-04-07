@@ -21,13 +21,15 @@ and blue. First we generate `r`. To do this we have some numbers available. The 
 and a `gif_factor` which is some number we choose. Mostly used when generating gifs so we can ignore it here,
 except for the fact that it is the first parameter of `render_img`.
 
-Once we create `r`, we move to `g` and we additional have the `r` value to work with. Finally we generate
-`b` and in this case we now have the `g` value to work with.
+The colors are generated in the following order: `r`, `g`, `b`. First `r` is generated and we only can
+create a mathematical expression with `x`, `y`, and `gif_factor`. The second color is `g`. We have the
+same variables to work with plus the additional `r` value. The third and last color is `b`. Again we
+have all of the previous variables to work with, plus the additional `g` value.
 
 At each stage here are the values we have available. `r: x, y, gif_factor`, `g: x, y, r, gif_factor`,
 `b: x, y, r, g, gif_factor`.
 
-First we need to required the `rubyart` library.
+First we need to require the `rubyart` library.
 
     require_relative 'rubyart'
 
@@ -46,6 +48,8 @@ value based on some mathematical operations.
 Finally render the image.
 
     art.render_img(0, 'image.png')
+
+And here is the output.
 
 <a target="_blank" href="image.png"><img src="image.png" alt="sample rendered image" /></a>
 
