@@ -4,6 +4,10 @@ require "RMagick"
 
 class RubyArt
 
+    attr_accessor :r_fn
+    attr_accessor :g_fn
+    attr_accessor :b_fn
+
     def render_img(gif_factor, img_name)
         rows = 125
         cols = 250
@@ -24,9 +28,15 @@ class RubyArt
 
         0.upto(cols - 1) do |x|
             0.upto(rows - 1) do |y|
-                r = make_int(x + y + gif_factor)
-                g = make_int(r + x + y + gif_factor)
-                b = make_int(g + r + x + y + gif_factor)
+                #r = make_int(x + y + gif_factor)
+                r = make_int(@r_fn.call(x, y, gif_factor))
+
+                #g = make_int(r + x + y + gif_factor)
+                g = make_int(@g_fn.call(x, y, r, gif_factor))
+
+                #b = make_int(g + r + x + y + gif_factor)
+                b = make_int(@b_fn.call(x, y, r, g, gif_factor))
+
                 canvas[x, y] = PNG::Color.new(r, g, b)
             end
         end
