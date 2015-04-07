@@ -17,8 +17,8 @@ Example usage and image produced
 --------------------------------
 To render an image it is important to understand how the engine works. We loop over the coordinates
 of an image. The `x` and `y` points, and for each point we generate an `rgb` color. A color for red, green,
-and blue. First we generate `r`. To do this we have some numbers available. The `x` and `y` coordinates, a
-`gif_factor` which is some number we choose. Mostly used when generating gifs so we can ignore it here.
+and blue. First we generate `r`. To do this we have some numbers available. The `x` and `y` coordinates, 
+and a `gif_factor` which is some number we choose. Mostly used when generating gifs so we can ignore it here.
 
 Once we create `r`, we move to `g` and we additional have the `r` value to work with. Finally we generate
 `b` and in this case we now have the `g` value to work with.
@@ -50,6 +50,14 @@ Finally render the image.
 
 Example GIFs
 ------------
+To generate an animated GIF we start out as described in the image section above, but this time
+we call `art.render_gif('example.gif')` instead of `render_img`. 
+
+    art.render_gif('example.gif')
+
+This is where the `gif_factor` comes in to play. Currently it is the GIF frame number. The current
+number of frames is 256 and cannot currently be changed. e.g. `0 <= gif_factor <= 255`
+
 Due to the size of each GIF (~4-6mb) I created a gallery on imgur.
 
 <a target="_blank" href="http://imgur.com/a/h8Yot">http://imgur.com/a/h8Yot</a>
