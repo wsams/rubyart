@@ -18,7 +18,8 @@ Example usage and image produced
 To render an image it is important to understand how the engine works. We loop over the coordinates
 of an image. The `x` and `y` points, and for each point we generate an `rgb` color. A color for red, green,
 and blue. First we generate `r`. To do this we have some numbers available. The `x` and `y` coordinates, 
-and a `gif_factor` which is some number we choose. Mostly used when generating gifs so we can ignore it here.
+and a `gif_factor` which is some number we choose. Mostly used when generating gifs so we can ignore it here,
+except for the fact that it is the first parameter of `render_img`.
 
 Once we create `r`, we move to `g` and we additional have the `r` value to work with. Finally we generate
 `b` and in this case we now have the `g` value to work with.
